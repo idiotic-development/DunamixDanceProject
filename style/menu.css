@@ -1,3 +1,11 @@
+#menu
+{
+	position: absolute;
+	bottom: 110px;
+	left: 0;
+	right: 0;
+}
+
 #menu div
 {
 	border-top: 1px solid #888888;

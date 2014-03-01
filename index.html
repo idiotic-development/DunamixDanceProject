@@ -4,36 +4,50 @@
 	<link rel="stylesheet" type="text/css" href="style/main.css">
 	<link rel="stylesheet" type="text/css" href="style/menu.css">
 	<link rel="stylesheet" type="text/css" href="style/background.css">
+	<link rel="stylesheet" type="text/css" href="style/animations.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready (function()
+		{
+			var body = parseInt($("body").css("width"))-75;
+			var overflow = parseInt($("#news").css("width"))-body;
+			$("#news").mousemove (function (event)
+			{
+				var pos = (event.pageX-100)*(overflow/body)*-1;
+				pos = pos < 0 ? pos : 0;
+				pos = pos*-1 < overflow-75 ? pos : (overflow-75)*-1;
+				$("#news").css ("left", pos+"px");
+			});
+		});
+	</script>
 </head>
 <body>
 	<div id="header"><img src="style/dunamix-text.png"></div>
-	<div id="drop">
-		<div id="menu">
-			<div>
-				<a href="http://dunamixdanceproject.com/temecula-dance-classes/">Classes</a>
-				<span>
-					<a href="http://dunamixdanceproject.com/temecula-dance-classes/pre-school/">Pre-school</a>
-					<a href="http://dunamixdanceproject.com/temecula-dance-classes/temecula-ballet-classes/">ballet</a>
-				</span>
-			</div>
-			<div>
-				<a href="http://dunamixdanceproject.com/booking/">Registration</a>
-			</div>
-		</div>
-		<div id="news">
-			<p>Test</p><p>Test</p><p>test</p><p>Test</p><p>Test</p>
-		</div>
-		<div id="footer">
-			&copy; 2014 Dunamix Dance Project.&nbsp;&nbsp; Design adapted by <a href="https://github.com/idiotic-development">Idiotic Design</a>
+	<div id="menu">
+		<div>
+			<a href="http://dunamixdanceproject.com/temecula-dance-classes/">Classes</a>
 			<span>
-				<a href="https://www.facebook.com/DunamixDanceProject">
-					<img style="height: 20px"src="http://dunamixdanceproject.com/wp-content/themes/Foxy/images/facebook.png">
-				</a>
-				<a href="http://dunamixdanceproject.com/#">
-					<img style="height: 20px" src="http://dunamixdanceproject.com/wp-content/themes/Foxy/images/twitter.png">
-				</a>
+				<a href="http://dunamixdanceproject.com/temecula-dance-classes/pre-school/">Pre-school</a>
+				<a href="http://dunamixdanceproject.com/temecula-dance-classes/temecula-ballet-classes/">ballet</a>
 			</span>
 		</div>
+		<div>
+			<a href="http://dunamixdanceproject.com/booking/">Registration</a>
+		</div>
+	</div>
+	<div id="news">
+		<p>Test</p><p>Test</p><p>test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p>
+	</div>
+	<div id="footer">
+		&copy; 2014 Dunamix Dance Project.&nbsp;&nbsp; Design adapted by <a href="https://github.com/idiotic-development">Idiotic Design</a>
+		<span>
+			<a href="https://www.facebook.com/DunamixDanceProject">
+				<img style="height: 18px"src="http://dunamixdanceproject.com/wp-content/themes/Foxy/images/facebook.png">
+			</a>
+			<a href="http://dunamixdanceproject.com/#">
+				<img style="height: 18px" src="http://dunamixdanceproject.com/wp-content/themes/Foxy/images/twitter.png">
+			</a>
+		</span>
 	</div>
 </body>
 </html>
