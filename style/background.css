@@ -1,0 +1,41 @@
+body:before
+{
+	content: "";
+	background-image: url("https://www.linesballet.org/media-ssl/uploads/backgrounds/Web_Home_Page_Yujin_Bus_resized.jpg");
+	background-size: 100%;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	opacity: 0.0;
+	animation: fade1 20s infinite;
+}
+
+body:after
+{
+	content: "";
+	background-image: url("https://www.linesballet.org/media-ssl/uploads/backgrounds/Web_Home_Page_Yujin_Square_Resized.jpg");
+	background-size: 100%;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	opacity: 0.0;
+	animation: fade2 20s infinite;
+}
+
+@keyframes fade1
+{
+	0% {opacity: 0.0;}
+	5% {opacity: 1.0}
+	45% {opacity: 1.0}
+	50% {opacity: 0.0;}
+}
+
+@keyframes fade2
+{
+	50% {opacity: 0.0;}
+	55% {opacity: 1.0;}
+	95% {opacity: 1.0;}
+	100% {opacity: 0.0;}
+}
