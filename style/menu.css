@@ -1,9 +1,16 @@
 #menu
 {
+	font-family: HelveticaNeueCondensedBold;
 	position: absolute;
 	bottom: 110px;
 	left: 0;
 	right: 0;
+}
+
+@font-face
+{
+	font-family: HelveticaNeueCondensedBold;
+	src: url("HelveticaNeueCondensedBold.woff");
 }
 
 #menu div

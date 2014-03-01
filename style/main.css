@@ -7,11 +7,16 @@
 body
 {
 	color: #888888;
-	font-family: "helvetica", "arial", sans-serif;
+	font-family: "HelveticaNeueMedium", "Helvetica Neue", "Helvetica", "Liberation Sans", "Arial", "sans-serif";
 	background-color: #000000;
 	z-index: 1;
 }
 
+@font-face
+{
+	font-family: HelveticaNeueMedium;
+	src: url("HelveticaNeueMedium.woff");
+}
 
 #header
 {
