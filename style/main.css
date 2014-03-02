@@ -7,15 +7,15 @@
 body
 {
 	color: #888888;
-	font-family: "HelveticaNeueMedium", "Helvetica Neue", "Helvetica", "Liberation Sans", "Arial", "sans-serif";
+	font-family: "HelveticaNeueLight", "Helvetica Neue", "Helvetica", "Liberation Sans", "Arial", "sans-serif";
 	background-color: #000000;
 	z-index: 1;
 }
 
 @font-face
 {
-	font-family: HelveticaNeueMedium;
-	src: url("HelveticaNeueMedium.woff");
+	font-family: HelveticaNeueLight;
+	src: url("HelveticaNeueLight.woff");
 }
 
 #header
@@ -27,6 +27,22 @@ body
 	top: 0;
 	left: 0;
 	right: 0;
+}
+
+#header span
+{
+	float: right;
+}
+
+#header a
+{
+	color: rgba(255, 255, 255, 0.6);
+	text-decoration: none;	
+}
+
+#header a:hover
+{
+	color: #eeeeee	;
 }
 
 #news
