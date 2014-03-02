@@ -18,6 +18,29 @@
 				pos = pos*-1 < overflow-75 ? pos : (overflow-75)*-1;
 				$("#news").css ("left", pos+"px");
 			});
+			$.getJSON(
+				"https://graph.facebook.com/dunamixdanceproject?fields=posts&access_token=CAACEdEose0cBACVYYUQHpVwM77wjFZAkNzXeEbulLXZBiNjzEiXZCtPrGj7mZAzqPa8M5ojBb2HYSZBlikXacrAZAXvsthNrvimisrXFYgXGed1KcPIDxgMySBNsCQFV86Y5rLQxPPhLi7Wh2r5T9ZCLg4ZArM8ZAX05hqZCFp2sBuN1p0vqlRJlsU7ePc57spKDmMTgtchFU3rAZDZD",
+				function (facebook) {
+					$.each (facebook.posts.data, function(i, v)
+					{
+						var html = "";
+						if (v.message)
+							html = v.message;
+
+						if (v.picture)
+							html += "<img src=\""+v.picture+"\">"
+
+						if (html != "")
+						{
+							var p = $(document.createElement("p")).appendTo ("#news");
+							$(document.createElement("h1"))
+								.append (v.created_time)
+								.appendTo(p);
+							p.append(html);
+						}
+					});
+				}
+			);
 		});
 	</script>
 </head>
@@ -49,16 +72,15 @@
 		</div>
 	</div>
 	<div id="news">
-		<p>Test</p><p>Test</p><p>test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p>
 	</div>
 	<div id="footer">
 		&copy; 2014 Dunamix Dance Project.&nbsp;&nbsp; Design adapted by <a href="https://github.com/idiotic-development">Idiotic Design</a>
 		<span>
 			<a href="https://www.facebook.com/DunamixDanceProject">
-				<img style="height: 18px"src="http://dunamixdanceproject.com/wp-content/themes/Foxy/images/facebook.png">
+				<img style="height:18px" src="http://dunamixdanceproject.com/wp-content/themes/Foxy/images/facebook.png">
 			</a>
-			<a href="http://dunamixdanceproject.com/#">
-				<img style="height: 18px" src="http://dunamixdanceproject.com/wp-content/themes/Foxy/images/twitter.png">
+			<a href="http://www.youtube.com/user/DunamixDance">
+				<img style="height:18px; opacity:0.8;" src="style/youtube.png">
 			</a>
 		</span>
 	</div>
