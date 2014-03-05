@@ -10,13 +10,13 @@
 		$(document).ready (function()
 		{
 			$.getJSON(
-				"https://graph.facebook.com/dunamixdanceproject?fields=posts&access_token=CAACEdEose0cBAEz83rWeJiZAP0wkwa6bZAQsuecbrMHz20vp7CKRNwACAxafZAxMnWCnZBozByAKlMTlJyFuZBWqWJf2ZBvm0MRwUvW8sqvWBETiOviyvdqzeEhghwoT6UnIxCTlRZBnAmQEVp86WyIqp6gnN5R84ns7abCXrOT3mD6CLSA0aohyMQwRwimcYmKtXkSjuqZBqQZDZD",
+				"https://graph.facebook.com/dunamixdanceproject?fields=posts&access_token=CAACEdEose0cBAHnuKTj13lAM6vZC6G9NUdZCEs0PUObnf8JGs6iUV1HWNMsZB0UUPDdoTT6ZBSP9dadWoGsrv0NIgR95iT0rvP4q1WM9TduyBVegUscCBYh2TPba34dDCpyWvP1Be2s3Kme23PMcIkOW6LMZATsw3eYo6S6pRfkRkZBYMjHyyHkAsXgyISbvVbDIHobYxmXAZDZD",
 				function (facebook) {
 					$.each (facebook.posts.data, function(i, v)
 					{
 						var html = "";
 						if (v.message)
-							html = v.message;
+							html = v.message.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1<br>$2');
 
 						if (v.picture)
 							html += "<img src=\""+v.picture+"\">"
@@ -30,6 +30,7 @@
 							p.append (html);
 						}
 					});
+
 					var news = $("#news p").length*251;
 					$("#news").css ("width", news+"px");
 					var body = parseInt($("body").css("width"))-75;
