@@ -9,17 +9,8 @@
 	<script type="text/javascript">
 		$(document).ready (function()
 		{
-			var body = parseInt($("body").css("width"))-75;
-			var overflow = parseInt($("#news").css("width"))-body;
-			$("#news").mousemove (function (event)
-			{
-				var pos = (event.pageX-100)*(overflow/body)*-1;
-				pos = pos < 0 ? pos : 0;
-				pos = pos*-1 < overflow-75 ? pos : (overflow-75)*-1;
-				$("#news").css ("left", pos+"px");
-			});
 			$.getJSON(
-				"https://graph.facebook.com/dunamixdanceproject?fields=posts&access_token=CAACEdEose0cBACVYYUQHpVwM77wjFZAkNzXeEbulLXZBiNjzEiXZCtPrGj7mZAzqPa8M5ojBb2HYSZBlikXacrAZAXvsthNrvimisrXFYgXGed1KcPIDxgMySBNsCQFV86Y5rLQxPPhLi7Wh2r5T9ZCLg4ZArM8ZAX05hqZCFp2sBuN1p0vqlRJlsU7ePc57spKDmMTgtchFU3rAZDZD",
+				"https://graph.facebook.com/dunamixdanceproject?fields=posts&access_token=CAACEdEose0cBAEz83rWeJiZAP0wkwa6bZAQsuecbrMHz20vp7CKRNwACAxafZAxMnWCnZBozByAKlMTlJyFuZBWqWJf2ZBvm0MRwUvW8sqvWBETiOviyvdqzeEhghwoT6UnIxCTlRZBnAmQEVp86WyIqp6gnN5R84ns7abCXrOT3mD6CLSA0aohyMQwRwimcYmKtXkSjuqZBqQZDZD",
 				function (facebook) {
 					$.each (facebook.posts.data, function(i, v)
 					{
@@ -34,10 +25,21 @@
 						{
 							var p = $(document.createElement("p")).appendTo ("#news");
 							$(document.createElement("h1"))
-								.append (v.created_time)
-								.appendTo(p);
-							p.append(html);
+								.append (new Date(v.created_time).toDateString())
+								.appendTo (p);
+							p.append (html);
 						}
+					});
+					var news = $("#news p").length*251;
+					$("#news").css ("width", news+"px");
+					var body = parseInt($("body").css("width"))-75;
+					var overflow = news-body;
+					$("#news").mousemove (function (event)
+					{
+						var pos = (event.pageX-100)*(overflow/body)*-1;
+						pos = pos < 0 ? pos : 0;
+						pos = pos*-1 < overflow-75 ? pos : (overflow-75)*-1;
+						$("#news").css ("left", pos+"px");
 					});
 				}
 			);
