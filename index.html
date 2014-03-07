@@ -5,12 +5,14 @@
 	<link rel="stylesheet" type="text/css" href="style/menu.css">
 	<link rel="stylesheet" type="text/css" href="style/background.css">
 	<link rel="stylesheet" type="text/css" href="style/animations.css">
+	<script src="style/prefixfree.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready (function()
 		{
 			$.getJSON(
-				"https://graph.facebook.com/dunamixdanceproject?fields=posts&access_token=CAACEdEose0cBAHnuKTj13lAM6vZC6G9NUdZCEs0PUObnf8JGs6iUV1HWNMsZB0UUPDdoTT6ZBSP9dadWoGsrv0NIgR95iT0rvP4q1WM9TduyBVegUscCBYh2TPba34dDCpyWvP1Be2s3Kme23PMcIkOW6LMZATsw3eYo6S6pRfkRkZBYMjHyyHkAsXgyISbvVbDIHobYxmXAZDZD",
+				"https://graph.facebook.com/dunamixdanceproject?fields=posts&access_token=CAACEdEose0cBAFeiZBCaARWsmvdpNyBbZA5xRJ3jvbmZATELEu4ZBgeIhcSnzJeSUquBv90Jd3xes6FzThntKOMTKmNYoytv6plaUm1ZAsZBJFmv5XkdssZBQAZAP4nLTLZCmHjwqNs5gXc7yuIsbTeaOVZARlnuIHQN5mPyRFZACMadWZB5jAsOjYJ2646ejFHqAXHfiSY9ONepOAZDZD",
+
 				function (facebook) {
 					$.each (facebook.posts.data, function(i, v)
 					{
@@ -31,7 +33,7 @@
 						}
 					});
 
-					var news = $("#news p").length*251;
+					var news = ($("#news p").length+1)*251;
 					$("#news").css ("width", news+"px");
 					var body = parseInt($("body").css("width"))-75;
 					var overflow = news-body;
@@ -67,17 +69,56 @@
 			<a href="http://dunamixdanceproject.com/temecula-dance-classes/">Classes</a>
 			<span>
 				<a href="http://dunamixdanceproject.com/temecula-dance-classes/pre-school/">Pre-school</a>
-				<a href="http://dunamixdanceproject.com/temecula-dance-classes/temecula-ballet-classes/">ballet</a>
+				<a href="http://dunamixdanceproject.com/temecula-dance-classes/temecula-ballet-classes/">Ballet</a>
+				<a href="http://dunamixdanceproject.com/temecula-dance-classes/ballroom-with-matt-gregory/">Ballroom</a>
+				<a href="http://dunamixdanceproject.com/temecula-dance-classes/temecula-hiphop-dance-classes/">Hip Hop</a>
+				<a href="http://dunamixdanceproject.com/temecula-dance-classes/break-dance/">Break Dance</a>
+				<a href="http://dunamixdanceproject.com/temecula-dance-classes/temecula-jazz-dance-classes/">Jazz</a>
+				<a href="http://dunamixdanceproject.com/temecula-dance-classes/conditioning/">Conditioning</a>
+				<a href="http://dunamixdanceproject.com/temecula-dance-classes/dunamix-athletics/">Athletics</a>
+				<a href="http://dunamixdanceproject.com/temecula-dance-classes/tap/">Tap</a>
 			</span>
 		</div>
 		<div>
 			<a href="http://dunamixdanceproject.com/booking/">Registration</a>
+			<span>
+				<a href="http://dunamixdanceproject.com/location-tuition/">Tuition</a>
+				<a href="http://dunamixdanceproject.com/schedule/">Schedule</a>
+			</span>
+		</div>
+		<div>
+			<a href="http://dunamixdanceproject.com/calendar/">Calendar</a>
+		</div>
+		<div>
+			<a href="http://dunamixdanceproject.com/videos/">Videos</a>
+			<span>
+				<a href="http://dunamixdanceproject.com/videos/pinocchio/">Pinocchio</a>
+				<a href="http://dunamixdanceproject.com/videos/videos/">Beautiful Things</a>
+			</span>
+		</div>
+		<div>
+			<a href="http://dunamixdanceproject.com/product-category/instructors/">Instructors</a>
+			<span>
+				<a href="http://dunamixdanceproject.com/instructors-2/nicole-thomas-ballet-pointe-pas-de-deux-jazz-improv-massage-technique/">Nicole Thomas</a>
+				<a href="http://dunamixdanceproject.com/instructors-2/danielle-peig-jazz-contemporary-tricks/">Danielle Peig</a>
+				<a href="http://dunamixdanceproject.com/instructors-2/rose-anton-lengthenstrengthen/">Rose Anton</a>
+				<a href="http://dunamixdanceproject.com/instructors-2/mark-hernandez-artsketching/">Mark Hernandez</a>
+				<a href="http://dunamixdanceproject.com/instructors-2/hannah-clemente-ballet/">Hannah Clemente</a>
+				<a href="http://dunamixdanceproject.com/instructors-2/richie-prospal-hip-hop/">Richie Prospal</a>
+				<a href="http://dunamixdanceproject.com/temecula-dance-classes/ballroom-with-matt-gregory/">Matt Gregory</a>
+				<a href="http://dunamixdanceproject.com/instructors-2/brooke-sanchez-pre-ballet/">Brooke Sanchez</a>
+				<a href="http://dunamixdanceproject.com/instructors-2/tina-salas-hip-hop-hip-hop-performance-team/">Tina Salas</a>
+				<a href="http://dunamixdanceproject.com/instructors-2/frank-thomas-athletics/">Frank Thomas</a>
+				<a href="http://dunamixdanceproject.com/instructors-2/brittany-daniels-ballet-pointe-stretch-theraband/">Brittany Daniels</a>
+				<a href="http://dunamixdanceproject.com/instructors-2/kellie-matack-ballet-instructor/">Kellie Matack</a>
+				<a href="http://dunamixdanceproject.com/instructors-2/katherine-berry-ballet-instructor/">Katherine Berry</a>
+			</span>
 		</div>
 	</div>
 	<div id="news">
 	</div>
 	<div id="footer">
-		&copy; 2014 Dunamix Dance Project.&nbsp;&nbsp; Design adapted by <a href="https://github.com/idiotic-development">Idiotic Design</a>
+		&copy; 2014 <a href="mailto:dunamixdanceproject@gmail.com">Dunamix Dance Project</a>.&nbsp;&nbsp; Design adapted by <a href="https://github.com/idiotic-development">Idiotic Design</a>
 		<span>
 			<a href="https://www.facebook.com/DunamixDanceProject">
 				<img style="height:18px" src="http://dunamixdanceproject.com/wp-content/themes/Foxy/images/facebook.png">

@@ -1,7 +1,7 @@
 #menu
 {
 	font-family: HelveticaNeueCondensedBold;
-	position: absolute;
+	position: fixed;
 	bottom: 120px;
 	left: 0;
 	right: 0;
@@ -16,8 +16,9 @@
 #menu div
 {
 	border-top: 1px solid #888888;
-	display: block;
 	text-transform: uppercase;
+	display: block;
+	position: relative;
 }
 
 #menu a
@@ -38,6 +39,7 @@
 {
 	color: rgba(0, 0, 0, 0);
 	font-size: 28px;
+ 	font-family: "HelveticaNeueLight";
 	margin-left: 10px;
 }
 
@@ -54,4 +56,9 @@
 #menu div:hover span a
 {
 	color: rgba(256, 256, 256, 0.3);
+}
+
+#menu div:hover span a:hover
+{
+	color: rgba(256, 256, 256, 1);
 }
