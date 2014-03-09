@@ -1,0 +1,68 @@
+#menu
+{
+	font-family: HelveticaNeueCondensedBold;
+	position: fixed;
+	bottom: 120px;
+	left: 0;
+	right: 0;
+}
+
+@font-face
+{
+	font-family: HelveticaNeueCondensedBold;
+	src: url("HelveticaNeueCondensedBold.woff");
+}
+
+#menu div
+{
+	background-color: #888888;
+	text-transform: uppercase;
+	display: inline;
+	position: relative;
+/*/	height: 80px;*/
+	margin-bottom: 20px;
+}
+
+#menu a
+{
+	color: rgba(256,256,256,0.3);
+	font-weight: bold;
+	font-size: 76px;
+	text-decoration: none;
+	position: relative;
+	top: -5px;
+}
+
+#menu div span
+{
+	position: absolute;
+	top: 10;
+}
+
+#menu div span a
+{
+	color: rgba(0, 0, 0, 0);
+	font-size: 28px;
+ 	font-family: "HelveticaNeueLight";
+	margin-left: 10px;
+}
+
+#menu div:hover
+{
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+#menu div:hover a
+{
+	color: #ffffff;
+}
+
+#menu div:hover span a
+{
+	color: rgba(256, 256, 256, 0.3);
+}
+
+#menu div:hover span a:hover
+{
+	color: rgba(256, 256, 256, 1);
+}

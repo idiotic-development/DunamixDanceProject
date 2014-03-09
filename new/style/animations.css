@@ -1,0 +1,55 @@
+#header
+{
+	overflow: hidden;
+	animation: header 1s 0.5s both;
+}
+
+@keyframes header
+{
+	from {top: -300px;}
+	to {top: 0;}
+}
+
+#menu
+{
+	overflow: hidden;
+	animation: menu 1s 3s both;
+}
+
+@keyframes menu
+{
+	from {height: 0;}
+	to {height: 580px;}
+}
+
+#menu div
+{
+	transition: all 0.5s;
+}
+
+#menu a
+{
+	transition: color 0.5s;
+}
+
+#menu ul li, #menu ul li a
+{
+	transition: color 1s 0.5s;
+}
+
+#menu ul a:hover
+{
+	transition: color 1s;
+}
+
+#footer
+{
+	overflow: hidden;
+	animation: footer 1s 0.5s both;
+}
+
+@keyframes footer
+{
+	from {height: 0; padding-top: 0;}
+	to {height: 22px; padding-top: 8px;}
+}

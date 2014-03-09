@@ -1,0 +1,84 @@
+#menu
+{
+	font-family: HelveticaNeueCondensedBold;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+}
+
+@font-face
+{
+	font-family: HelveticaNeueCondensedBold;
+	src: url("HelveticaNeueCondensedBold.woff");
+}
+
+#menu div
+{
+	background-color: rgba(0, 0, 0, 0.9);
+	float: left;
+	clear: left;
+	padding: 0 40px;
+	margin-bottom: 20px;
+	border-top-right-radius: 40px;
+	border-bottom-right-radius: 40px;
+	position: relative;
+	border-width: 2px 2px 2px 0;
+	border-color: #333333;
+	border-style: solid;
+}
+
+#menu div:hover
+{
+	left: 0 !important;
+}
+
+#menu div:hover a
+{
+	color: #ffffff;
+}
+
+#menu a
+{
+	color: rgba(256,256,256,0.3);
+	font-weight: bold;
+	font-size: 76px;
+	text-decoration: none;
+	float: right;
+	text-transform: uppercase;
+}
+
+#menu div ul
+{
+	float: left;
+	margin: 5px 10px;
+}
+
+#menu div li
+{
+	color: rgba(256, 256, 256, 0);
+}
+
+#menu div:hover li
+{
+	color: rgba(256, 256, 256, 0.6);
+}
+
+#menu div ul a
+{
+	text-transform: none;
+	font-size: 15px;
+	color: rgba(256, 256, 256, 0);
+ 	font-family: "HelveticaNeueLight";
+ 	float: none;
+}
+
+#menu div:hover ul a
+{
+	color: rgba(256, 256, 256, 0.6);
+}
+
+#menu div ul a:hover
+{
+	color: rgba(256, 256, 256, 1);
+}
